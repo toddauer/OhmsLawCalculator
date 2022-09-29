@@ -1,0 +1,32 @@
+class led:
+    def __init__ (self, voltage_drop, current, watts):
+        self.voltage_drop = voltage_drop
+        self.current = current
+        self.watts = watts
+        
+# led fields: voltage drop, current, watts
+red_led = led(2.3, .120, .5)
+green_led = led(3.4, .120, .5)
+blue_led = led(3.4, .120, .5)
+ 
+# user inputs supply voltage
+supply_voltage = float(input("Supply Voltage: "))
+ 
+# led class used in calculations
+red_circuit_voltage = supply_voltage - red_led.voltage_drop
+red_resistance = round(red_circuit_voltage/red_led.current,2)
+red_watts = round(red_circuit_voltage * red_led.current,2)
+ 
+green_circuit_voltage = supply_voltage - green_led.voltage_drop
+green_resistance = round(green_circuit_voltage/green_led.current,2)
+green_watts = round(green_circuit_voltage * green_led.current,2)
+ 
+blue_circuit_voltage = supply_voltage - blue_led.voltage_drop
+blue_resistance = round(blue_circuit_voltage/blue_led.current,2)
+blue_watts = round(blue_circuit_voltage * blue_led.current,2)
+ 
+# prints needed resistor and watt calculation to user
+print("red " + str(red_resistance) + " Ohms " + str(red_watts) + " Watts") 
+print("green " + str(green_resistance) + " Ohms " + str(green_watts) + " Watts")
+print("blue " + str(blue_resistance) + " Ohms " + str(blue_watts) + " Watts")
+
