@@ -1,5 +1,5 @@
 # PythonCalculators
-uses Ohm's law formulas and if conditions to know what you are trying to calculate
+Series of calculators used to make my life easier.
 
 
 If using these calculators in micro python:
