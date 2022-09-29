@@ -1,0 +1,17 @@
+'''
+Cylinder Regeneration: The speed of the cylinder in
+regeneration is determined by how fast the rod volume
+can be filled by the pump flow.
+'''
+from math import *
+while True:
+    dr = float(input("Rod Dia:"))
+    q = float(input("Flow Rt:"))
+    ar = (pi * dr**2) / 4
+    US = 231
+    SI = 1000
+    veUS = round(q * US / ar, 2)
+    veSI = round(q * SI / ar, 2)
+    print("US:",veUS)
+    print("SI:",veSI)
+    
