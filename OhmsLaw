@@ -5,9 +5,11 @@ while True:
     e = float(input('Volts: '))
     i = float(input('Amps: '))
     r = float(input('Ohms: '))
-    s = ", "
+ 
 # Series of math operations for variables
-    #watts
+'''
+Look in print of each if to determine output of calculation
+'''
     if e and i != 0:
         p1 = round(e * i ,3)
         r1 = round(e / i ,3)
