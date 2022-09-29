@@ -1,0 +1,38 @@
+'''
+Extend speed of a cylinder: S = Q * conversion factor / A
+Flow rate of a cylinder: Q = S * A / conversion factor
+Bore diameter: A = Q * conversion factor / S & D = SQRT(A / .7854)
+'''
+from math import *
+while True:
+    s = float(input("Speed: "))
+    b = float(input("Bore Dia: "))
+    q = float(input("Flow Rt.: "))
+    US = 231
+    SI = 1000
+    ba = b*b*.7854
+#Find Speed
+    if s == 0:
+        sUS = round(q * US / ba, 3)
+        sSI = round(q * SI / ba, 3)
+        print("Speed US:", sUS)
+        print("Speed SI:", sSI)
+        print()
+#Find Flow Rate
+    if q == 0:
+        qUS = round(s * ba / US, 3)
+        qSI = round(s * ba / SI, 3)
+        print("Q Rt US:", qUS)
+        print("Q Rt SI:", qSI)
+        print()
+#Find Bore Diameter
+    if b == 0:
+        bdUS = q * US / s
+        bdaUS = round(sqrt(bdUS/.7854), 3)
+        bdSI = q * SI / s
+        bdaSI = round(sqrt(bdSI/.7854), 3)
+        print("Dia US:", bdaUS)
+        print("Dia SI:", bdaSI)
+        print()
+    else:
+         print("Invalid Input")
