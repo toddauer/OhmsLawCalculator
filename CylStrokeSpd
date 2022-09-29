@@ -1,0 +1,34 @@
+'''
+Cylinder Stroke Time SI = Time = A * 60 * L / Q * 1000
+Cylinder Stroke Time US = Time = A * 60 * L / Q * 231
+'''
+
+while True:
+    q = float(input("Flow Rt:"))
+    l = float(input("Stroke:"))
+    ba = float(input("Bore/Rod Area:")) #if you already know the area, else 0
+    b = float(input("Bore Dia:"))
+    r = float(input("Rod Dia:"))
+    be = b*b*.7854
+    aa = ((b*b)-(r*r))*.7854
+    US = 231
+    SI = 1000
+#Extension and Retraction Time Area Given
+    if ba != 0:
+        tUS = round((ba * 60 * l) / (q * US),3)
+        tSI = round((ba * 60 * l) / (q * SI),3)
+        print("Ext/Ret US:", tUS)
+        print("Ext/Ret SI:", tSI)
+#Extension Time Area Not Given OR Rod Diameter Not Given
+    if b != 0 and r == 0:
+        tUS = round((be * 60 * l) / (q * US),3)
+        tSI = round((be * 60 * l) / (q * SI),3)
+        print("Ext US:", tUS)
+        print("Ext SI:", tSI)
+#Retraction Time Area Not Given
+    if r != 0:
+        tUS = round((aa * 60 * l) / (q * US),3)
+        tSI = round((aa * 60 * l) / (q * SI),3)
+        print("Ret US:", tUS)
+        print("Ret SI:", tSI)
+
