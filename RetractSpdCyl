@@ -1,0 +1,52 @@
+'''
+Annular area given bore and rod = (Ab**2 + Ar**2) * .7854
+Retraction Speed = Q * conversion factor / Annular area
+Flow Rate = S * Aa / conversion factor
+
+
+'''
+from math import *
+while True:
+    b = float(input("Bore Dia: "))
+    r = float(input("Rod Dia: "))
+    q = float(input("Flow Rt: "))
+    s = float(input("Speed:"))
+    US = 231
+    SI = 1000
+    aa = round(((b*b)-(r*r))*.7854, 3)
+#Find annular area
+    if r and q and s == 0:
+        aa = round(((b*b)-(r*r))*.7854, 3)
+        print("Annular Area:",aa)
+        print()
+#Find retraction speed
+    if b and r and q != 0:
+        srUS = round(q * US / aa, 3)
+        srSI = round(q * SI / aa, 3)
+        print("Ret US:",srUS)
+        print("Ret SI:",srSI)
+        print()
+#Find flow rate
+    if s and b and r != 0:
+        qUS = round(s * aa / US, 3)
+        qSI = round(s * aa / SI, 3)
+        print("Flow Rt US:", qUS)
+        print("Flow Rt SI:", qSI)
+        print()
+#Find bore diameter
+    if q and r and s != 0:
+        aaUS = q * US / s
+        aaSI = q * SI / s
+        ar = r * r * .7854
+        abUS = aaUS + ar
+        abSI = aaSI + ar
+        bUS = round(sqrt(abUS / .7854), 3)
+        bSI = round(sqrt(abSI / .7854), 3)
+        print("Bore US:", bUS)
+        print("Bore SI:", bSI)
+        print()
+    else:
+        print()
+        print("Invalid Input")
+        print()
+        
