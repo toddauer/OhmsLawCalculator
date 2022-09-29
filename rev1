@@ -1,0 +1,37 @@
+from math import sqrt
+while True:
+# Inputs for each variable: if unk, insert 0
+    p = float(input('Watts: '))
+    e = float(input('Volts: '))
+    i = float(input('Amps: '))
+    r = float(input('Ohms: '))
+    s = ", "
+# Series of math operations for variables
+    #watts
+    if e and i != 0:
+        p1 = round(e * i ,3)
+        r1 = round(e / i ,3)
+        print('watts:',p1, 'ohms:',r1)
+    if r and i != 0:
+        p2 = round(r * i**2 ,3)
+        e1 = round(r * i ,3)
+        print('watts:',p2, 'volts:',e1)
+    if e and r != 0:
+        p3 = round(e**2/r ,3)
+        i3 = round(e / r ,3)
+        print('watts:',p3, 'amps:',i3)
+    if p and i != 0:
+        e2 = round(p / i ,3)
+        r3 = round(p / i**2 ,3)
+        print('volts:',e2, 'ohms:',r3)
+    if p and r != 0:
+        e3 = round(sqrt(p * r) ,3)
+        i1 = round(sqrt(p / r) ,3)
+        print('volts:',e3, 'amps:',i1)
+    if p and e != 0:
+        i2 = round(p / e ,3)
+        r2 = round(e**2 / p ,3)
+        print('amps:',i2, 'ohms:',r2)      
+    else:
+        print()
+    
