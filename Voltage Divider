@@ -1,0 +1,6 @@
+# Vout = R2 * Vin / (R1 + R2)
+Vin = float(input("Voltage In: "))
+R1 = float(input("R1: "))
+R2 = float(input("R2: "))
+Vout = round(R2 * Vin / (R1 + R2),2)
+print("Voltage Out: ", Vout)
