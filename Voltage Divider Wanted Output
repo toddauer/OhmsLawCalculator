@@ -1,0 +1,7 @@
+# R2 = Vout * R1 / (Vin-Vout)
+
+Vout = float(input("V Out: "))
+R1 = float(input("R1: "))
+Vin = float(input("V In: "))
+R2 = round(Vout * R1 / (Vin - Vout),2)
+print(R2, "Ohms")
