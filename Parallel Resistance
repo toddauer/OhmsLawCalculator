@@ -1,0 +1,6 @@
+x = 0
+num_res = int(input("Total number of resistors in parallel: "))
+for i in range(num_res):
+    value = int(input("Resistor value "))
+    x = x + 1/value
+print(round(1/x,2), "Ohms")
