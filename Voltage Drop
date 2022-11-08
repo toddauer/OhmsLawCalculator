@@ -1,0 +1,29 @@
+'''
+Voltage Drop = Resistor/Reistance Total * Voltage Input
+
+Ex) A 12 VDC input has 3 resistors in series [120, 100, 50]. What is the voltage drop across each resistor?
+
+Voltage Drop R1 = (120 / 270) * 12 = 5.33
+Voltage Drop R2 = (100 / 270) * 12 = 4.44
+Voltage Drop R3 = ( 50 / 270) * 12 = 2.22
+Voltage Drop Sum = 11.99 VDC
+'''
+
+resistor_values = []
+voltage_drop = []
+
+input_voltage = float(input("Input Voltage: "))
+number_of_resistors = int(input("Number of resistors: "))
+ele = 0
+
+for i in range(number_of_resistors):
+    resistor_values.append(float(input("Resistor Value:")))
+    
+while(ele < len(resistor_values)):
+    Rt = sum(resistor_values)
+    voltage_drop.append(round((resistor_values[ele]/Rt) * input_voltage,2))
+    ele += 1
+
+print(resistor_values)
+print(Rt)
+print(voltage_drop)
