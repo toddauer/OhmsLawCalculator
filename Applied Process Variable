@@ -1,0 +1,32 @@
+'''
+Calculate sensor input given sensitivity, range, and output data:
+
+Ex) Calculate the temperature applied to an input sensor having a sensitivity of 0.02 V/deg C, operating range of 0-500 deg C (0-10 VDC), and an electrical output of 7.2 V. 
+I = 7.2 - 0 / 0.02 + 0
+I = 360 deg C
+
+Ex) Calculate the temperature applied to a Type K thermocouple having a temperature range of -200 deg C to 1200 deg C (0-20ma), a sensitivity of 0.01429 mA/deg C, and an output signal of 10 ma. 
+I = ((10 -0) / 0.01429) + (-200)
+I = 499.79 deg C
+'''
+
+
+'''
+I = O - Omin / Ssen + Imin
+
+Imin = Minimum that sensor can detect
+Ssen = Sensitivity of input sensor
+Omin = Minimum sensor output signal
+O = Output signal of sensor
+I = Input applied to sensor
+
+'''
+while True:
+    Imin = float(input("Minimum that sensor can detect: "))
+    Ssen = float(input("Sensitivity of input sensor: "))
+    Omin = float(input("Minimum sensor output signal: "))
+    O = float(input("Output signal of sensor: "))
+    I = float(input("Input applied to sensor: "))
+
+    x = (O - Omin) / (Ssen) + Imin
+    print("I = ",x)
