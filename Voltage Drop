@@ -7,23 +7,38 @@ Voltage Drop R1 = (120 / 270) * 12 = 5.33
 Voltage Drop R2 = (100 / 270) * 12 = 4.44
 Voltage Drop R3 = ( 50 / 270) * 12 = 2.22
 Voltage Drop Sum = 11.99 VDC
-'''
 
+Input Voltage: 12
+Number of resistors: 3
+Resistor Value:120
+Resistor Value:100
+Resistor Value:50
+[120.0, 100.0, 50.0]
+270.0
+[5.33, 4.44, 2.22]
+
+'''
+#Lists resistor values and voltage drops so that math can be applied and all values can be printed at once. Just a nice way to store the values.
 resistor_values = []
 voltage_drop = []
 
+#Asks for input voltage and the number of resistors in your voltage divider circuit. List item set to 0 so that it will index the math at 0 and increment by 1 for each item in list. 
 input_voltage = float(input("Input Voltage: "))
 number_of_resistors = int(input("Number of resistors: "))
-ele = 0
+list_item = 0
 
+#Repeats appending values to resistor values list based on number of resistors entered in number_of_resistors i.e. it would repeat 3 times if you entered 3. 
 for i in range(number_of_resistors):
     resistor_values.append(float(input("Resistor Value:")))
-    
-while(ele < len(resistor_values)):
-    Rt = sum(resistor_values)
-    voltage_drop.append(round((resistor_values[ele]/Rt) * input_voltage,2))
-    ele += 1
 
-print(resistor_values)
-print(Rt)
-print(voltage_drop)
+#While list_item variable is less than the length of resistor values, it will do the math for each resistor divided by resistance total and multiply it by the input voltage.
+#This value is rounded to 2 decimal places to make reading the voltage drop list easier. 
+while(list_item < len(resistor_values)):
+    Rt = sum(resistor_values)
+    voltage_drop.append(round((resistor_values[list_item]/Rt) * input_voltage,2))
+    list_item += 1
+
+#Prints your resistor values, the total resistance, and the voltage drop across each resistor. 
+print("Total Resistance" , Rt)
+print("Reistor Values" , resistor_values)
+print("Voltage Drops" , voltage_drop)
